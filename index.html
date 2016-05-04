@@ -13,36 +13,20 @@
     <link href="app/app.component.css" rel="stylesheet" />
 
     <!-- 1. 載入必要函式庫 -->
-    <!-- 載入 IE 必備的 polyfills 必須按照以下順序載入 -->
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     
-    <!-- 載入 Angular 2 相關函式庫 -->
+    <!-- 載入 IE 必備的 polyfills 函式庫 -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-
-    <!-- 載入 Angular 2 HTTP 模組 (Service) -->
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
-
-    <!-- 載入 Angular 2 Router 模組 -->
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
-
+    
     <!-- 2. 設定 SystemJS 環境 -->
+    <script src="systemjs.config.js"></script>
     <script>
-        System.config({
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
       // 載入 app/main 啟動器模組
       System.import('app/main')
-            .then(null, console.error.bind(console));
+            .catch(function(err){ console.error(err);  });
     </script>
 </head>
 

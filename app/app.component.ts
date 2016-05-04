@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { HTTP_PROVIDERS, Http, Response } from 'angular2/http';
+import { Component } from '@angular/core';
+import { HTTP_PROVIDERS, Http, Response } from '@angular/http';
 import 'rxjs/Rx';   // Load all features
 
 @Component({
