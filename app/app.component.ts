@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 import { HTTP_PROVIDERS, Http, Response } from '@angular/http';
 import 'rxjs/Rx';   // Load all features
 
@@ -11,7 +11,9 @@ import 'rxjs/Rx';   // Load all features
         </div>
      </div>
      `,
-    providers: [HTTP_PROVIDERS]
+    providers: [HTTP_PROVIDERS],
+    styleUrls: ['app/app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
     pageTitle: string = 'Hello World';
